@@ -1,0 +1,43 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b18">
+  <title>Parallax Pixel Art</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <section class="intro" aria-label="Animação de introdução controlada pela rolagem">
+      <div class="intro__stage">
+        <canvas class="intro__canvas" aria-label="Sequência de introdução"></canvas>
+        <p class="intro__hint">role para continuar</p>
+      </div>
+    </section>
+
+    <section class="hero" aria-label="Paisagem noturna em pixel art">
+      <img class="hero__layer" src="parallax/ceu.jpg" data-speed="0.05" alt="" aria-hidden="true">
+      <img class="hero__layer" src="parallax/estrelas.png" data-speed="0.20" alt="" aria-hidden="true">
+      <img class="hero__layer" src="parallax/lua.png" data-speed="0.35" data-scale="0.99" alt="" aria-hidden="true">
+      <img class="hero__layer" src="parallax/nuvens.png" data-speed="0.50" alt="" aria-hidden="true">
+      <img class="hero__layer hero__temple" src="parallax/templo.png" data-speed="0.65" alt="" aria-hidden="true">
+      <img class="hero__layer hero__stairs" src="parallax/escada.png" data-speed="0.80" alt="" aria-hidden="true">
+      <img class="hero__layer hero__cherry" src="parallax/cerejeira.png" data-speed="0.95" alt="" aria-hidden="true">
+    </section>
+
+    <section class="content" aria-labelledby="content-title">
+      <div class="content__inner">
+        <p class="content__eyebrow">Teste de scroll</p>
+        <h1 id="content-title">Vai tomar no cu</h1>
+        <p>
+          por favor.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
+
