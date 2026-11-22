@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Conte suas preferências e escolha um destino para conhecer no Japão.">
+  <title>m4t turismo - Form</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/jpeg" href="imgPagina/faviconGato.jpg">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark barra-navegacao barra-navegacao--interna efeito-vidro" aria-label="Navegação principal">
+    <div class="container">
+      <a class="navbar-brand" href="index.html#inicio">m4t turismo</a>
+      <button class="navbar-toggler efeito-vidro" type="button" data-bs-toggle="collapse" data-bs-target="#menu-paginas" aria-controls="menu-paginas" aria-expanded="false" aria-label="Abrir navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu-paginas">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+          <li class="nav-item"><a class="nav-link" href="index.html#inicio">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="pagina-2.html" aria-current="page">Formulário</a></li>
+          <li class="nav-item"><a class="nav-link" href="pagina-3.html">Tabela</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container pagina-formulario py-4 py-lg-5">
+    <div class="row align-items-stretch g-4 g-xl-5">
+      <div class="col-lg-5">
+        <aside class="formulario-visual">
+          <img class="formulario-visual__foto" src="imgPagina/formulario.jpg" alt="" aria-hidden="true" width="736" height="1104">
+          <div class="formulario-visual__legenda">
+          </div>
+        </aside>
+      </div>
+
+      <section class="col-lg-7 formulario-painel" aria-labelledby="titulo-formulario">
+        <div class="formulario-links">
+          <a class="formulario-voltar" href="index.html#destinos" aria-label="Voltar aos destinos">
+            <span aria-hidden="true"><i class="bi bi-arrow-left"></i></span>
+            <span>Voltar aos destinos</span>
+          </a>
+        </div>
+
+        <h1 class="titulo-secao formulario-titulo mb-3" id="titulo-formulario">O que você quer conhecer no Japão?</h1>
+        <p class="texto-suave mb-4">Escolha um destino e conte que tipo de passeio combina com você. Esta demonstração monta uma ideia de roteiro sem enviar ou guardar suas respostas.</p>
+
+        <form id="formulario-interesse" class="row g-3" novalidate>
+          <div class="col-md-6">
+            <label class="form-label" for="nome">Seu nome</label>
+            <input class="form-control" id="nome" name="nome" type="text" autocomplete="name" maxlength="80" placeholder="Como podemos chamar você?" required>
+            <div class="invalid-feedback">Informe seu nome.</div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="email">E-mail</label>
+            <input class="form-control" id="email" name="email" type="email" autocomplete="email" maxlength="120" placeholder="voce@exemplo.com" required>
+            <div class="invalid-feedback">Informe um e-mail válido.</div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="destino">Destino de interesse</label>
+            <select class="form-select" id="destino" name="destino" required>
+              <option value="" selected disabled>Escolha um destino</option>
+              <option value="Tóquio">Tóquio</option>
+              <option value="Quioto">Quioto</option>
+              <option value="Monte Fuji">Monte Fuji</option>
+              <option value="Osaka">Osaka</option>
+              <option value="Nara">Nara</option>
+            </select>
+            <div class="invalid-feedback">Escolha um destino da lista.</div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="estilo">Estilo de passeio</label>
+            <select class="form-select" id="estilo" name="estilo" required>
+              <option value="" selected disabled>Escolha um estilo</option>
+              <option value="cultura e história">Cultura e história</option>
+              <option value="gastronomia local">Gastronomia local</option>
+              <option value="natureza e trilhas">Natureza e trilhas</option>
+              <option value="cidades e tecnologia">Cidades e tecnologia</option>
+            </select>
+            <div class="invalid-feedback">Escolha o estilo que mais combina com você.</div>
+          </div>
+          <div class="col-12">
+            <label class="form-label" for="epoca">Quando gostaria de viajar?</label>
+            <select class="form-select" id="epoca" name="epoca">
+              <option value="" selected>Ainda não decidi</option>
+              <option>Primavera</option>
+              <option>Verão</option>
+              <option>Outono</option>
+              <option>Inverno</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <label class="form-label" for="mensagem">O que gostaria de fazer por lá?</label>
+            <textarea class="form-control" id="mensagem" name="mensagem" rows="3" maxlength="500" placeholder="Visitar templos, provar pratos locais, conhecer trilhas..."></textarea>
+          </div>
+          <div class="col-12 d-flex flex-wrap align-items-center gap-3">
+            <button class="btn btn-destino efeito-vidro btn-enviar-formulario" type="submit">
+              Montar minha ideia <i class="bi bi-arrow-right" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="col-12">
+            <p class="alert alert-success d-none mb-0" id="mensagem-formulario" role="status" aria-live="polite" tabindex="-1"></p>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer class="rodape-site">
+    <div class="container py-4">
+      <div class="row align-items-center g-3">
+        <div class="col-md-6"><small>Projeto informativo, não fazemos reservas! © <span id="ano-atual"></span></small></div>
+        <nav class="col-md-6 links-rodape" aria-label="Navegação do rodapé">
+          <a href="index.html#inicio">Início</a>
+          <a href="pagina-2.html">Formulário</a>
+          <a href="pagina-3.html">Tabela</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="formulario.js" defer></script>
+  <script src="site.js" defer></script>
+</body>
+</html>

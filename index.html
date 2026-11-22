@@ -1,43 +1,172 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#090b18">
-  <title>Parallax Pixel Art</title>
+  <meta name="description" content="Guia visual de viagem pelo Japão com destinos, ideias de passeio e uma rota para inspirar seu roteiro.">
+  <title>m4t turismo</title>
+  <link rel="icon" type="image/jpeg" href="imgPagina/faviconGato.jpg">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <main>
-    <section class="intro" aria-label="Animação de introdução controlada pela rolagem">
-      <div class="intro__stage">
-        <canvas class="intro__canvas" aria-label="Sequência de introdução"></canvas>
-        <p class="intro__hint">role para continuar</p>
+    <section class="hero-inicial" id="inicio" aria-labelledby="titulo-inicio">
+      <nav class="navbar navbar-expand-lg navbar-dark barra-navegacao efeito-vidro" aria-label="Navegação principal">
+        <div class="container">
+          <a class="navbar-brand" href="#inicio">m4t turismo</a>
+          <button class="navbar-toggler efeito-vidro" type="button" data-bs-toggle="collapse" data-bs-target="#menu-inicial" aria-controls="menu-inicial" aria-expanded="false" aria-label="Abrir navegação">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="menu-inicial">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+              <li class="nav-item"><a class="nav-link" href="#inicio" aria-current="page">Início</a></li>
+              <li class="nav-item"><a class="nav-link" href="pagina-2.html">Formulário</a></li>
+              <li class="nav-item"><a class="nav-link" href="pagina-3.html">Tabela</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <img class="hero-inicial__imagem" src="imgPagina/hero.jpg" alt="" aria-hidden="true" fetchpriority="high" decoding="async">
+      <div class="hero-inicial__sombra" aria-hidden="true"></div>
+      <div class="hero-inicial__conteudo">
+        <p class="hero-inicial__chamada">Guia de viagem pelo:</p>
+        <h1 id="titulo-inicio">JAPÃO</h1>
+        <p class="hero-inicial__descricao">Veja o que visitar no Japão, explore rotas e amplie suas ideias.</p>
+      </div>
+      <a class="btn btn-hero efeito-vidro hero-inicial__acao" href="#destinos">
+        Ver destinos <i class="bi bi-arrow-down-right" aria-hidden="true"></i>
+      </a>
+    </section>
+
+    <section class="secao-paralaxe" id="paisagem-pixel-art" aria-labelledby="titulo-paisagem-pixel-art">
+      <div class="cena-pixel-art" aria-label="Paisagem noturna em pixel art com camadas em movimento">
+        <img class="camada-paralaxe camada-ceu" src="parallax/ceu.jpg" data-velocidade-paralaxe="0.05" alt="" aria-hidden="true" loading="lazy" decoding="async">
+        <img class="camada-paralaxe camada-estrelas" src="parallax/estrelas.png" data-velocidade-paralaxe="0.20" alt="" aria-hidden="true" loading="lazy" decoding="async">
+        <img class="camada-paralaxe camada-lua" src="parallax/lua.png" data-velocidade-paralaxe="0.35" data-escala-paralaxe="0.99" alt="" aria-hidden="true" loading="lazy" decoding="async">
+        <img class="camada-paralaxe camada-nuvens" src="parallax/nuvens.png" data-velocidade-paralaxe="0.50" alt="" aria-hidden="true" loading="lazy" decoding="async">
+        <img class="camada-paralaxe camada-templo" src="parallax/templo.png" data-velocidade-paralaxe="0.65" alt="" aria-hidden="true" loading="lazy" decoding="async">
+        <img class="camada-paralaxe camada-escada" src="parallax/escada.png" data-velocidade-paralaxe="0.80" alt="" aria-hidden="true" loading="lazy" decoding="async">
+        <img class="camada-paralaxe camada-cerejeira" src="parallax/cerejeira.png" data-velocidade-paralaxe="0.95" alt="" aria-hidden="true" loading="lazy" decoding="async">
+        <div class="legenda-paisagem container">
+          <h2 id="titulo-paisagem-pixel-art">Um pedacinho do Japão<br>em pixel art</h2>
+        </div>
       </div>
     </section>
 
-    <section class="hero" aria-label="Paisagem noturna em pixel art">
-      <img class="hero__layer" src="parallax/ceu.jpg" data-speed="0.05" alt="" aria-hidden="true">
-      <img class="hero__layer" src="parallax/estrelas.png" data-speed="0.20" alt="" aria-hidden="true">
-      <img class="hero__layer" src="parallax/lua.png" data-speed="0.35" data-scale="0.99" alt="" aria-hidden="true">
-      <img class="hero__layer" src="parallax/nuvens.png" data-speed="0.50" alt="" aria-hidden="true">
-      <img class="hero__layer hero__temple" src="parallax/templo.png" data-speed="0.65" alt="" aria-hidden="true">
-      <img class="hero__layer hero__stairs" src="parallax/escada.png" data-speed="0.80" alt="" aria-hidden="true">
-      <img class="hero__layer hero__cherry" src="parallax/cerejeira.png" data-speed="0.95" alt="" aria-hidden="true">
-    </section>
+    <section class="destinos-secao" id="destinos" aria-labelledby="titulo-destinos">
+      <img class="destinos-fundo" src="imgCarrossel/Tokyoskyline.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <img class="destinos-fundo destinos-fundo--inativo" alt="" aria-hidden="true" decoding="async">
+      <div class="destinos-cabecalho container">
+        <div class="row g-3 align-items-end">
+          <div class="col-md-8">
+            <h2 class="titulo-secao" id="titulo-destinos">Cinco destinos no Japão</h2>
+          </div>
+          <div class="col-md-4 text-md-end">
+            <a class="btn btn-destino efeito-vidro" href="pagina-3.html">
+              Tabela de destinos <i class="bi bi-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
 
-    <section class="content" aria-labelledby="content-title">
-      <div class="content__inner">
-        <p class="content__eyebrow">Teste de scroll</p>
-        <h1 id="content-title">Vai tomar no cu</h1>
-        <p>
-          por favor.
-        </p>
+      <div class="container carrossel-destinos-layout">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-7">
+            <div id="carrossel-destinos" class="carousel slide destinos-esteira" role="region" aria-roledescription="carrossel" aria-label="Destinos do Japão">
+              <div class="carousel-inner destino-janela" aria-live="polite">
+                <div class="destino-trilho" data-faixa-de-cartoes></div>
+              </div>
+              <div class="destino-controles" aria-label="Controles do carrossel">
+                <button class="destino-seta efeito-vidro" type="button" data-destino-direcao="-1" aria-label="Destino anterior">
+                  <i class="bi bi-arrow-left" aria-hidden="true"></i>
+                </button>
+                <div class="destino-indicadores carousel-indicators" role="group" aria-label="Selecionar destino">
+                  <button type="button" data-indice-destino="0" class="active" aria-current="true" aria-label="Destino 1: Tóquio"></button>
+                  <button type="button" data-indice-destino="1" aria-label="Destino 2: Quioto"></button>
+                  <button type="button" data-indice-destino="2" aria-label="Destino 3: Monte Fuji"></button>
+                  <button type="button" data-indice-destino="3" aria-label="Destino 4: Osaka"></button>
+                  <button type="button" data-indice-destino="4" aria-label="Destino 5: Nara"></button>
+                </div>
+                <button class="destino-seta efeito-vidro" type="button" data-destino-direcao="1" aria-label="Próximo destino">
+                  <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="destino-descricao" aria-live="polite">
+              <h3 data-destino-titulo>Tóquio</h3>
+              <p data-destino-descricao>Templos, letreiros luminosos e bairros com ritmos diferentes convivem na capital japonesa.</p>
+              <a class="btn btn-destino efeito-vidro" data-destino-link href="pagina-2.html?destino=T%C3%B3quio" aria-label="Planejar uma visita a Tóquio">
+                Planejar uma visita <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <template id="modelo-cartao-destino">
+        <button class="carousel-item destino-card card" type="button" data-cartao-destino>
+            <img src="" alt="" draggable="false" loading="eager" decoding="async">
+            <span class="destino-card__regiao"></span>
+            <span class="destino-card__nome"></span>
+            <span class="destino-card__categoria"></span>
+        </button>
+      </template>
+    </section>
+    <section class="rota-horizontal" id="roteiro" aria-labelledby="titulo-roteiro">
+      <div class="rota-palco">
+        <header class="rota-cabecalho container">
+          <h2 id="titulo-roteiro">Escolha a M4t!</h2>
+        </header>
+        <div class="rota-viewport" role="region" aria-label="Templos, jardins, mercados, comida de rua, montanhas, cerejeiras e cidades do Japão">
+          <div class="rota-faixa" data-faixa-da-rota aria-hidden="true">
+            <span>Praticidade</span><span class="rota-separador"></span>
+            <span class="rota-destaque">Organização</span><span class="rota-separador"></span>
+            <span>Agilidade</span><span class="rota-separador"></span>
+            <span class="rota-destaque">Confiança</span><span class="rota-separador"></span>
+            <span>Profissionalismo</span><span class="rota-separador"></span>
+            <span class="rota-destaque">Referência</span><span class="rota-separador"></span>
+            <span>Elite</span><span class="rota-separador"></span>
+            <span>M4t.</span>
+          </div>
+        </div>
+        <div class="rota-indicador" aria-hidden="true">
+          <span>Continue rolando</span>
+          <div class="rota-progresso"><span data-progresso-da-rota></span></div>
+        </div>
       </div>
     </section>
   </main>
 
-  <script src="script.js" defer></script>
+  <footer class="rodape-site">
+    <div class="container py-5">
+      <div class="row g-4 align-items-end">
+        <div class="col-md-7">
+          <p class="titulo-rodape">m4t turismo</p>
+        </div>
+        <nav class="col-md-5 links-rodape" aria-label="Navegação do rodapé">
+          <a href="#inicio">Início</a>
+          <a href="pagina-2.html">Formulário</a>
+          <a href="pagina-3.html">Tabela</a>
+        </nav>
+        <div class="col-12">
+          <hr>
+          <small>Projeto informativo, não fazemos reservas! © <span id="ano-atual"></span></small>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="site.js" defer></script>
+  <script type="module" src="liquid-glass.js"></script>
 </body>
 </html>
-
