@@ -28,6 +28,62 @@ body {
 body > main {
   flex: 1 0 auto;
 }
+html.carregando-hero,
+html.carregando-hero body {
+  overflow: hidden;
+}
+.tela-carregamento {
+  position: fixed;
+  z-index: 2000;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 42%, rgb(111 61 104 / 34%), transparent 38%), linear-gradient(155deg, #111426 0%, #090b18 58%, #171023 100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .75s ease, visibility .75s ease;
+}
+html.carregando-hero .tela-carregamento {
+  opacity: 1;
+  visibility: visible;
+}
+.tela-carregamento__conteudo {
+  display: flex;
+  width: min(24rem, calc(100% - 3rem));
+  flex-direction: column;
+  align-items: center;
+  gap: .8rem;
+  text-align: center;
+}
+.tela-carregamento__nota {
+  color: #d7c6ed;
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .22em;
+}
+.tela-carregamento__trilho {
+  width: 10rem;
+  height: 2px;
+  overflow: hidden;
+  background: rgb(255 255 255 / 15%);
+}
+.tela-carregamento__trilho span {
+  display: block;
+  width: 35%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #f0d9e8, #d7c6ed, transparent);
+  animation: percorrer-trilho 1.5s ease-in-out infinite;
+}
+.tela-carregamento__nota {
+  color: #8f8b9d;
+  font-size: .55rem;
+  letter-spacing: .25em;
+}
+@keyframes percorrer-trilho {
+  from { transform: translateX(-110%); }
+  to { transform: translateX(300%); }
+}
 section[id] {
   scroll-margin-top: 4.5rem;
 }

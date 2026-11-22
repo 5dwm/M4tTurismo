@@ -41,6 +41,41 @@ const listaDestinos = [
   }
 ];
 document.addEventListener("DOMContentLoaded", () => {
+  const telaDeCarregamento = document.querySelector(".tela-carregamento");
+  const imagemDoHero = document.querySelector(".hero-inicial__imagem");
+  if (telaDeCarregamento && imagemDoHero) {
+    const inicioDoCarregamento = performance.now();
+    let finalizando = false;
+    let limiteDeCarregamento;
+
+    function esconderTelaDeCarregamento() {
+      if (finalizando) return;
+      finalizando = true;
+      window.clearTimeout(limiteDeCarregamento);
+      const tempoRestante = Math.max(0, 550 - (performance.now() - inicioDoCarregamento));
+      window.setTimeout(() => {
+        document.documentElement.classList.remove("carregando-hero");
+        telaDeCarregamento.setAttribute("aria-hidden", "true");
+      }, tempoRestante);
+    }
+
+    function imagemDoHeroPronta() {
+      if (typeof imagemDoHero.decode === "function") {
+        imagemDoHero.decode().catch(() => {}).then(esconderTelaDeCarregamento);
+      } else {
+        esconderTelaDeCarregamento();
+      }
+    }
+
+    if (imagemDoHero.complete) {
+      imagemDoHeroPronta();
+    } else {
+      imagemDoHero.addEventListener("load", imagemDoHeroPronta, { once: true });
+      imagemDoHero.addEventListener("error", esconderTelaDeCarregamento, { once: true });
+    }
+    limiteDeCarregamento = window.setTimeout(esconderTelaDeCarregamento, 12000);
+  }
+
   const secaoParalaxe = document.querySelector(".secao-paralaxe");
   const cenaPixelArt = document.querySelector(".cena-pixel-art");
   const camadasDaPaisagem = document.querySelectorAll(".camada-paralaxe");
